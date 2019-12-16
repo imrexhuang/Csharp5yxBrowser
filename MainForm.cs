@@ -30,8 +30,9 @@ namespace v5yxBrowser
 
 		public static string Branding = "v5yxBrowser";
 		public static string UserAgent = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1";
-		public static string HomepageURL = "http://v5yx.com";
-		public static string DownloadsURL = "v5yxBrowser://storage/downloads.html";
+        public static string HomepageURL = "https://tw.news.yahoo.com/weather/";
+        //public static string HomepageURL = "https://yahoo-twmovies-2019maucu-iffam.tumblr.com/post/189482878148";
+        public static string DownloadsURL = "v5yxBrowser://storage/downloads.html";
 		public static string FileNotFoundURL = "v5yxBrowser://storage/errors/notFound.html";
 		public static string CannotConnectURL = "v5yxBrowser://storage/errors/cannotConnect.html";
 		//public static string SearchURL = "https://www.google.co.in/#q=";

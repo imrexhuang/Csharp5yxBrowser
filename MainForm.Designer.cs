@@ -73,20 +73,20 @@
             this.menuCloseTab,
             this.menuCloseOtherTabs});
             this.menuStripTab.Name = "menuStripTab";
-            this.menuStripTab.Size = new System.Drawing.Size(249, 64);
+            this.menuStripTab.Size = new System.Drawing.Size(176, 48);
             // 
             // menuCloseTab
             // 
             this.menuCloseTab.Name = "menuCloseTab";
             this.menuCloseTab.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.menuCloseTab.Size = new System.Drawing.Size(248, 30);
+            this.menuCloseTab.Size = new System.Drawing.Size(175, 22);
             this.menuCloseTab.Text = "Close tab";
             this.menuCloseTab.Click += new System.EventHandler(this.menuCloseTab_Click);
             // 
             // menuCloseOtherTabs
             // 
             this.menuCloseOtherTabs.Name = "menuCloseOtherTabs";
-            this.menuCloseOtherTabs.Size = new System.Drawing.Size(248, 30);
+            this.menuCloseOtherTabs.Size = new System.Drawing.Size(175, 22);
             this.menuCloseOtherTabs.Text = "Close other tabs";
             this.menuCloseOtherTabs.Click += new System.EventHandler(this.menuCloseOtherTabs_Click);
             // 
@@ -104,7 +104,7 @@
             this.TxtURL.Location = new System.Drawing.Point(1071, 12);
             this.TxtURL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtURL.Name = "TxtURL";
-            this.TxtURL.Size = new System.Drawing.Size(134, 32);
+            this.TxtURL.Size = new System.Drawing.Size(134, 22);
             this.TxtURL.TabIndex = 5;
             this.TxtURL.Visible = false;
             this.TxtURL.Click += new System.EventHandler(this.txtUrl_Click);
@@ -230,7 +230,7 @@
             this.TxtSearch.Location = new System.Drawing.Point(10, 6);
             this.TxtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(181, 37);
+            this.TxtSearch.Size = new System.Drawing.Size(181, 25);
             this.TxtSearch.TabIndex = 6;
             this.TxtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             this.TxtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
@@ -248,9 +248,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(316, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(974, 32);
+            this.label1.Size = new System.Drawing.Size(605, 21);
             this.label1.TabIndex = 47;
-            this.label1.Text = "温馨提示：     F5刷新         Alt+Z老板键         两次Alt+Z可以在任何时间恢复全屏游戏哟！ ";
+            this.label1.Text = "溫馨提示：     F5重新整理         Alt+Z老闆鍵         兩次Alt+Z可以快速恢復全螢幕！";
             this.label1.Visible = false;
             // 
             // butt_zuidah

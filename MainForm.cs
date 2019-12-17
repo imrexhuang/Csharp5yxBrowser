@@ -30,7 +30,9 @@ namespace v5yxBrowser
 
 		public static string Branding = "v5yxBrowser";
 		public static string UserAgent = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1";
-        public static string HomepageURL = "https://tw.news.yahoo.com/weather/";
+        //public static string HomepageURL = "v5yxBrowser://storage/homepage.html";
+        public static string HomepageURL = "file:///storage/homepage.html";
+        //public static string HomepageURL = "https://tw.news.yahoo.com/weather/";
         //public static string HomepageURL = "https://yahoo-twmovies-2019maucu-iffam.tumblr.com/post/189482878148";
         public static string DownloadsURL = "v5yxBrowser://storage/downloads.html";
 		public static string FileNotFoundURL = "v5yxBrowser://storage/errors/notFound.html";
@@ -1015,8 +1017,8 @@ namespace v5yxBrowser
             {
                 this.Hide();
                 this.notifyIcon1.Visible = true;
-                notifyIcon1.Text = "老板键(Alt+Z)" + "\n" + "威武游戏";
-                notifyIcon1.ShowBalloonTip(1, "温馨提示：", "老板键(Alt+Z)" + "\n" + "威武游戏" + "\n程序已经被最小化" + "\n" + "如要还原请单击该图标！", ToolTipIcon.Info);
+                notifyIcon1.Text = "老闆鍵(Alt+Z)" + "\n" + "我的瀏覽器";
+                notifyIcon1.ShowBalloonTip(1, "溫馨提示：", "老闆鍵(Alt+Z)" + "\n" + "我的瀏覽器" + "\n程式已經被最小化" + "\n" + "如要還原請按一下該圖示！", ToolTipIcon.Info);
             }
         }
 
@@ -1035,7 +1037,7 @@ namespace v5yxBrowser
         private void myTaskbar()
         {
             //ToggleDesktop();
-            if (XS.Text == "隐藏")
+            if (XS.Text == "隱藏")
             {
                 //int TaskBarHwnd;
                 //TaskBarHwnd = FindWindow("Shell_traywnd", "");
@@ -1047,7 +1049,7 @@ namespace v5yxBrowser
                 this.Focus();
                 label1.Visible = false;
                 butt_zuidah.Visible = false;
-                XS.Text = "显示";
+                XS.Text = "顯示";
             }
             else
             {
@@ -1057,7 +1059,7 @@ namespace v5yxBrowser
                 // this.WindowState = FormWindowState.Minimized;
                 notifyIcon1.Visible = true;    //显示托盘图标
                 this.Hide();    //隐藏窗口
-                XS.Text = "隐藏";
+                XS.Text = "隱藏";
             }
 
         }
@@ -1072,8 +1074,8 @@ namespace v5yxBrowser
         {
             this.WindowState = FormWindowState.Minimized;
             notifyIcon1.Visible = true;    //显示托盘图标
-            notifyIcon1.Text = "老板键(Alt+Z)" + "\n" + "威武游戏";
-            notifyIcon1.ShowBalloonTip(1, "温馨提示：", "老板键(Alt+Z)" + "\n" + "威武游戏" + "\n程序已经被最小化" + "\n" + "如要还原请单击该图标！", ToolTipIcon.Info);
+            notifyIcon1.Text = "老闆鍵(Alt+Z)" + "\n" + "我的瀏覽器";
+            notifyIcon1.ShowBalloonTip(1, "溫馨提示：", "老闆鍵(Alt+Z)" + "\n" + "我的瀏覽器" + "\n程式已經被最小化" + "\n" + "如要還原請按一下該圖示！", ToolTipIcon.Info);
         }
         //i 不能等于0 要不 第一次点击出现bug
         int i = 1;

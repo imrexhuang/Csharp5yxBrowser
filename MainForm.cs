@@ -45,6 +45,9 @@ namespace v5yxBrowser
         private const int SWP_HIDEWINDOW = 0x80;
         private const int SWP_SHOWWINDOW = 0x40;
 
+        //https://www.telerik.com/support/kb/winforms/details/how-to-embed-chrome-browser-in-a-winforms-application
+        public ChromiumWebBrowser cwbrowser;
+
         [DllImport("user32.dll")]
         public static extern bool SetWindowPos(
         int hWnd,                           //   handle   to   window     
@@ -101,7 +104,7 @@ namespace v5yxBrowser
 			Instance = this;
 
 			InitializeComponent();
-            InitBrowser();
+            InitBrowser(); //初始化
             SetFormTitle(null);
 
             //设置老板键为alt+z
@@ -209,7 +212,7 @@ namespace v5yxBrowser
 		private void InitBrowser() {
 
 			CefSettings settings = new CefSettings();
-            settings.Locale = "zh-CN";
+            settings.Locale = "zh-TW";
             //指定flash的版本，不使用系统安装的flash版本
             settings.CefCommandLineArgs.Add("ppapi-flash-path", System.AppDomain.CurrentDomain.BaseDirectory + "plugins\\pepflashplayer.dll");
             var flashVerison = "18.0.0.160";
@@ -225,7 +228,7 @@ namespace v5yxBrowser
 			
 			settings.CachePath = GetAppDir("Cache");
 
-			Cef.Initialize(settings);
+			Cef.Initialize(settings); //初始化cef
 
 			dHandler = new DownloadHandler(this);
 			lHandler = new LifeSpanHandler(this);
@@ -237,14 +240,29 @@ namespace v5yxBrowser
 
 			host = new HostHandler(this);
 
-			AddNewBrowser(tabStrip1, HomepageURL);
+            cwbrowser = AddNewBrowser(tabStrip1, HomepageURL);
 
-		}
+            // https://www.telerik.com/support/kb/winforms/details/how-to-embed-chrome-browser-in-a-winforms-application
+            cwbrowser.LoadingStateChanged += browser_LoadingStateChanged;
 
-		/// <summary>
-		/// this is done every time a new tab is openede
-		/// </summary>
-		private void ConfigureBrowser(ChromiumWebBrowser browser) {
+        }
+
+        // https://www.telerik.com/support/kb/winforms/details/how-to-embed-chrome-browser-in-a-winforms-application
+        private void browser_LoadingStateChanged(object sender, LoadingStateChangedEventArgs e)
+        {
+            String strpoc = "練習CefSharp";
+
+            if (e.IsLoading == false)
+            {
+                cwbrowser.ExecuteScriptAsync("alert('All Resources Have Loaded！"+ strpoc + "');");
+            }
+        }
+
+
+        /// <summary>
+        /// this is done every time a new tab is openede
+        /// </summary>
+        private void ConfigureBrowser(ChromiumWebBrowser browser) {
 
 			BrowserSettings config = new BrowserSettings();
 
@@ -255,7 +273,8 @@ namespace v5yxBrowser
 
 			browser.BrowserSettings = config;
 
-		}
+
+        }
 
 
 		private static string GetAppDir(string name) {
@@ -273,12 +292,12 @@ namespace v5yxBrowser
 			string urlLower = url.Trim().ToLower();
 
 			// UI
-			SetTabTitle(CurBrowser, "正在加载...");
+			SetTabTitle(CurBrowser, "正在載入...");
 
 			// load page
 			if (urlLower == "localhost") {
 
-				newUrl = "http://v5yx.com";
+				newUrl = "file:///storage/homepage.html";
 
 			} else if (url.CheckIfFilePath() || url.CheckIfFilePath2()) {
 
